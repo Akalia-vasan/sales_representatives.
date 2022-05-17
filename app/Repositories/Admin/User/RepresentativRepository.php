@@ -28,9 +28,7 @@ class RepresentativRepository extends BaseRepository
                 'name',
                 'email',
                 'telephone',
-                'created_at',
-                'updated_at',
-                'deleted_at',
+                'routes',
             ]);
 
         return $dataTableQuery;

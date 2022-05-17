@@ -30,12 +30,11 @@
                         data: data
                     },
                     columns: [
-
+                        { data: 'id', name: 'id' },
                         { data: 'name', name: 'name' },
                         { data: 'email', name: 'email' },
-                        { data: 'roles', name: 'roles', sortable: false },
-                        { data: 'created_at', name: 'created_at' },
-                        { data: 'updated_at', name: 'updated_at' },
+                        { data: 'telephone', name: 'telephone' },
+                        { data: 'routes', name: 'routes' },
                         { data: 'actions', name: 'actions', searchable: false, sortable: false }
                     ],
                     order: [[0, "asc"]],

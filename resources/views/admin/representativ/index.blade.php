@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                Representativ Management <small class="text-muted">Active Representatives</small>
+                Sales Team
                 </h4>
             </div>
             <!--col-->

@@ -12,6 +12,7 @@ use App\Http\Requests\ManageRepresentativRequest;
 use App\Http\Requests\RepresentativUpdateRequest;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 class SaleRepresentativController extends Controller
 {
     
@@ -38,6 +39,15 @@ class SaleRepresentativController extends Controller
 
     public function store(ManageRepresentativRequest $request)
     {
+        $representativ = new SaleRepresentativ();
+        $representativ->name = $request->name;
+        $representativ->email = $request->email;
+        $representativ->telephone = $request->telephone;
+        $representativ->address = $request->address;
+        $representativ->routes = $request->routes;
+        $representativ->joined_at = Carbon::now();  
+        $representativ->comments = $request->comments;
+        $representativ->save();
     
         return redirect()->route('admin.auth.representativ.index')
                         ->with('success','Representativ created successfully');
@@ -46,13 +56,18 @@ class SaleRepresentativController extends Controller
     public function edit(SaleRepresentativ $representativ)
     {
         return view('admin.representativ.edit')
-        ->withUser($representativ);
+        ->withRepresentativ($representativ);
     }
 
     public function update(RepresentativUpdateRequest $request, SaleRepresentativ $representativ)
     {
-        
-    
+        $representativ->name = $request->name;
+        $representativ->email = $request->email;
+        $representativ->telephone = $request->telephone;
+        $representativ->address = $request->address;
+        $representativ->routes = $request->routes;
+        $representativ->comments = $request->comments;
+        $representativ->save();
         return redirect()->route('admin.auth.representativ.index')
                         ->with('success','Representativ updated successfully');
     }
