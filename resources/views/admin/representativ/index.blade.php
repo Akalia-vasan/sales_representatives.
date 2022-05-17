@@ -60,6 +60,59 @@
     </div>
     <!--card-body-->
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td id="sale-id"></td>
+                <tr>
+                <tr>
+                    <td>Full Name</td>
+                    <td id="sale-name"></td>
+                <tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td id="sale-email"></td>
+                <tr>
+                <tr>
+                    <td>Telephone</td>
+                    <td id="sale-phone"></td>
+                <tr>
+                <tr>
+                    <td>Address</td>
+                    <td id="sale-address"></td>
+                <tr>
+                <tr>
+                    <td>Join Date</td>
+                    <td id="sale-date"></td>
+                <tr>
+                <tr>
+                    <td>Current Routes</td>
+                    <td id="sale-route"></td>
+                <tr>
+                <tr>
+                    <td>Comments</td>
+                    <td id="sale-comment"></td>
+                <tr>
+            </thead>
+        </table>    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!--card-->
 @endsection
 
@@ -67,6 +120,27 @@
 <script>
     FTX.Utils.documentReady(function() {
         FTX.Users.list.init('');
+    });
+    $(document).on("click","#add-dialog",function() {
+        console.log(11)
+        var id = $(this).data('id');
+        var name = $(this).data('name');
+        var email = $(this).data('email');
+        var phone = $(this).data('phone');
+        var address = $(this).data('address');
+        var routes = $(this).data('routes');
+        var join = $(this).data('join');
+        var comment = $(this).data('comment');
+
+        $('#sale-id').text(id);
+        $('#sale-name').html(name);
+        $('#sale-email').html(email);
+        $('#sale-phone').html(phone);
+        $('#sale-date').html(join);
+        $('#sale-address').html(address);
+        $('#sale-route').html(routes);
+        $('#sale-comment').html(comment);
+
     });
 </script>
 @endsection

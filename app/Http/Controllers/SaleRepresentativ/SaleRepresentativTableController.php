@@ -24,7 +24,7 @@ class SaleRepresentativTableController extends Controller
             ->escapeColumns(['name', 'email'])
             ->addColumn('actions', function ($representativ) {
                 return '<a href="'.route('admin.auth.representativ.edit', $representativ).'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal"
+                <a class="btn btn-secondary btn-sm" id="add-dialog" data-toggle="modal" data-target="#exampleModal"
                 data-id="'.$representativ->id.'"
                     data-name="'.$representativ->name.'"
                     data-email="'.$representativ->email.'"

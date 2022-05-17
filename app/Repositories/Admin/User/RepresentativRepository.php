@@ -28,6 +28,9 @@ class RepresentativRepository extends BaseRepository
                 'name',
                 'email',
                 'telephone',
+                'address',
+                'joined_at',
+                'comments',
                 'routes',
             ]);
 
